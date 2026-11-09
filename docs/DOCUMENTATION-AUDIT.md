@@ -109,4 +109,13 @@ The documentation index and governance are in place; the checked paths, numerica
 - `git diff --check` passed. Repository URL: `https://github.com/kirolossedra/nru-publication`.
 - The Mission 3 patch was reconstructed as an incremental diff from the exact pinned NR-U commit plus the Mission 2 latency patch; `git apply --unidiff-zero --check` and application in a temporary reconstruction confirmed it yields the installed Mission 3 source exactly. Its zero-context form is deliberate and the required apply option is documented in the Mission 3 report.
 
-Commit SHA, push confirmation, remote tree verification, and final worktree status are appended after publication.
+The pre-commit audit above was completed before publication; verified publication evidence follows.
+
+### Publication verification (2026-11-09)
+
+- Mission 3 implementation/documentation commit: `9c50423bf8866b4180284e0026602e6851d8efc5` (`mission 3: run controlled NR-U Wi-Fi 6 latency pilot`). It was pushed to `https://github.com/kirolossedra/nru-publication` with `git push origin main`; GitHub reported a normal fast-forward from `08a1586` to `9c50423`.
+- `git ls-remote origin refs/heads/main` and `gh api repos/kirolossedra/nru-publication/commits/main` both returned `9c50423bf8866b4180284e0026602e6851d8efc5` at verification time.
+- The GitHub `main` tree was queried recursively. It contains `AGENTS.md`, root `README.md`, Mission 3 report, experimental methodology, documentation audit, pilot config, both Mission 3 scripts, and all eight compact analysis outputs (three CSVs and five PNGs).
+- Files in the Mission 3 commit: `.gitignore`; `README.md`; `configs/mission3-pilot.json`; `docs/DOCUMENTATION-AUDIT.md`; `docs/MISSIONS.md`; `docs/decisions/D-006-mission3-load-and-drain.md`; `docs/decisions/README.md`; `docs/methodology/experimental-methodology.md`; `docs/missions/mission-3-latency-under-load-pilot.md`; `logs/build-mission3-traffic-stop.log`; `patches/mission3-traffic-drain.patch`; `results/mission3/analysis/condition-summary.csv`; `results/mission3/analysis/failed-runs.csv`; `results/mission3/analysis/latency-ecdf-by-load.png`; `results/mission3/analysis/latency-vs-offered-load.png`; `results/mission3/analysis/mixed-vs-single-technology.png`; `results/mission3/analysis/seed-run-metrics.csv`; `results/mission3/analysis/seed-variation.png`; `results/mission3/analysis/throughput-loss-occupancy-vs-load.png`; `scripts/analyze_mission3.py`; `scripts/run_mission3.py`.
+- The raw per-run CSVs, databases, logs, and configs remain on the local workspace and are intentionally excluded from GitHub by `.gitignore`; the report records their paths and reproduction process.
+- A final local clean-worktree check follows the audit metadata commit. No branch switch, force-push, or remote-history rewrite occurred.

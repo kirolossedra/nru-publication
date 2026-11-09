@@ -161,7 +161,7 @@ D-006 records the drain-time implementation and calibration-selected rates. Fina
 
 ## 14. Final deliverables
 
-The deliverables include the successful incremental build and default-behavior regression, 24 successful primary mixed/reference runs, all local raw evidence, analysis scripts and outputs, a reproducible source patch, updated methodology, D-006, README/index/audit, and a normal push to `main` (publication evidence is in the audit).
+The deliverables include the successful incremental build and default-behavior regression, 24 successful primary mixed/reference runs, all local raw evidence, analysis scripts and outputs, a reproducible source patch, and updated methodology, D-006, README/index/audit. Mission implementation commit [`9c50423`](https://github.com/kirolossedra/nru-publication/commit/9c50423bf8866b4180284e0026602e6851d8efc5) was pushed normally to `main`; the audit records the remote SHA and published file list.
 
 ## 15. Unresolved questions / next step
 
