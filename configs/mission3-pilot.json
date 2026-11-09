@@ -1,0 +1,76 @@
+{
+  "mission": "Mission 3 controlled pilot",
+  "technology_mode": "NR-U Cat 4 LBT + Wi-Fi 802.11ax",
+  "scenario": 0,
+  "offered_rate_per_enabled_technology": [
+    "500kbps",
+    "2Mbps",
+    "12Mbps"
+  ],
+  "seed_schedule": {
+    "500kbps": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "2Mbps": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "12Mbps": [
+      11,
+      22,
+      33
+    ]
+  },
+  "run_id": 0,
+  "traffic_start_s": 0.5,
+  "active_traffic_duration_s": 3.5,
+  "traffic_stop_s": 4.0,
+  "simulator_stop_s": 4.9,
+  "drain_s": 0.9,
+  "packet_size_bytes": 1000,
+  "frequency_hz": 5200000000,
+  "bandwidth_hz": 20000000,
+  "scenario0_ue_x_m": 5.0,
+  "total_tx_power_dbm": 4.0,
+  "nr_ue_tx_power_dbm": 2.0,
+  "wifi_ap_sta_cca_threshold_dbm": -62.0,
+  "nr_cat3_cat4_energy_threshold_dbm": -79.0,
+  "nr_cat2_energy_threshold_dbm": -69.0,
+  "nr_gnb_access_manager": "ns3::NrCat4LbtAccessManager",
+  "nr_ue_access_manager": "ns3::NrAlwaysOnAccessManager",
+  "error_model": "ns3::NrEesmIrT1",
+  "rlc_model": "RlcUmAlways",
+  "reference_conditions": {
+    "offered_rate_per_enabled_technology": "2Mbps",
+    "modes": [
+      "wifi-only",
+      "nr-only"
+    ],
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "active_traffic_duration_s": 3.5,
+    "drain_s": 0.9
+  },
+  "deadline_thresholds_us": [
+    500,
+    1000,
+    5000
+  ],
+  "p99_9_minimum_pooled_received_samples": 10000,
+  "notes": "Run horizon capped at 4.9 s because NR UE EndVarTti produces a negative next-TTI scheduling delay at 5.018928564 s in this build. Each high-load seed generated about 5,249 packets per technology in seed 11; three seeds should pool about 15,700 received samples per technology, just above the P99.9 minimum reporting gate. P99.9 still has few extreme-tail observations and is exploratory. The highest successful load is not evidence of saturation."
+}

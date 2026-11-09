@@ -1,0 +1,20 @@
+--- a/examples/cttc-nr-wifi-interference.cc
++++ b/examples/cttc-nr-wifi-interference.cc
+@@ -253,0 +254 @@
++  double trafficStopTime = -1.0; // seconds; negative means simTime
+@@ -273,0 +275 @@
++  cmd.AddValue ("trafficStopTime", "Stop traffic sources before simTime to allow packets to drain (-1 uses simTime)", trafficStopTime);
+@@ -308,0 +311,7 @@
++  if (trafficStopTime < 0.0)
++    {
++      trafficStopTime = simTime;
++    }
++  NS_ABORT_MSG_IF (trafficStopTime <= udpAppStartTime || trafficStopTime > simTime,
++                   "trafficStopTime must be greater than app start and no later than simTime");
++
+@@ -611 +620 @@
+-  clientApps.Stop (Seconds (simTime));
++  clientApps.Stop (Seconds (trafficStopTime));
+@@ -668 +677 @@
+-          double thMbps = i->second.rxBytes * 8.0 / (simTime - udpAppStartTime) / 1e6;
++          double thMbps = i->second.rxBytes * 8.0 / (trafficStopTime - udpAppStartTime) / 1e6;

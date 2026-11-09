@@ -74,3 +74,12 @@ Thumbs.db
 results/**/*.csv
 !results/per-packet-latency.csv
 !results/latency-analysis/latency-summary.csv
+
+# Mission 3 per-run evidence is preserved locally; raw run logs, CSVs, and
+# databases are large/repetitive and are not committed. Commit selected
+# aggregate tables, plots, and documented representative evidence explicitly.
+/results/mission3/calibration/
+/results/mission3/pilot/
+/results/mission3/pilot-revised/
+/results/mission3/reference/
+/results/mission3/diagnostics/

@@ -2,7 +2,7 @@
 
 A reproducible ns-3 research environment for studying latency and other network outcomes when Wi-Fi 6 and 5G NR-U share unlicensed spectrum under different channel-access mechanisms.
 
-> Current status: Missions 1 and 2 are implemented and documented. The installed compatibility stack builds, the official NR-U/Wi-Fi coexistence example runs, and application-boundary packet latency is exported to CSV. No load-sweep campaign has started. The single saved baseline is a smoke test, not a scientific finding.
+> Current status: Missions 1, 2, 2.5, and 3 are implemented, documented, and published to `main`. The Mission 3 controlled pilot completed 24 mixed/reference runs across 0.5, 2, and 12 Mbps per technology, with per-packet measurements and validated aggregate outputs. These are preliminary simulator observations; no full campaign has started and no result is a publication-level finding.
 
 ## Motivation and central question
 
@@ -17,6 +17,8 @@ The intended dependent outcomes are average latency, P95/P99/P99.9, throughput, 
 The installed official `cttc-nr-wifi-interference` example creates an NR gNB/UE link and a Wi-Fi AP/STA link in a shared 5.2 GHz, 20 MHz spectrum channel with indoor-office propagation. A remote host sends UDP traffic toward both access links. The baseline selects Wi-Fi 802.11ax at 5 GHz and NR gNB Cat 4 LBT. Mission 2 adds source-application TX and sink-application RX traces to produce one record per transmitted packet without replacing the example's SQLite statistics.
 
 The diagrams and implementation details are in [simulator architecture](docs/architecture/simulator.md), [coexistence implementation](docs/architecture/coexistence.md), and [packet/measurement flow](docs/architecture/packet-flow.md).
+
+Mission 3 stopped application sources at 4.0 s and let sinks run to 4.9 s to observe a drain interval. It used 3.5 s active traffic, loads of 0.5/2/12 Mbps per enabled technology, and 10/5/3 independent seeds respectively. Matched 2 Mbps Wi-Fi-only and NR-only references used three seeds each. All 49,838 transmitted packets in the primary mixed/reference set had unique receptions before simulation stop; this is not evidence of zero underlying drops outside the observed window. The complete design, sample counts, measured outcomes, and uncertainty are in the [Mission 3 report](docs/missions/mission-3-latency-under-load-pilot.md).
 
 ## Software stack and environment
 
@@ -54,6 +56,7 @@ Current measurements include throughput and mean delay/jitter in SQLite, plus pe
 - [Mission 1 — Environment installation](docs/missions/mission-1-environment.md): compatible source stack, compile patch, official coexistence baseline, capabilities and limits.
 - [Mission 2 — Per-packet latency](docs/missions/mission-2-latency.md): trace instrumentation, raw CSV, matching/loss validation, analysis and plots.
 - [Mission 2.5 — Documentation governance](docs/missions/mission-2-5-documentation.md): this documentation system, audit and permanent AGENTS.md policy.
+- [Mission 3 — Controlled latency-under-load pilot](docs/missions/mission-3-latency-under-load-pilot.md): calibration, replicated fixed-mechanism pilot, references, analysis, evidence, and limits.
 
 The [mission history index](docs/MISSIONS.md) is chronological. [Decision records](docs/decisions/README.md) capture engineering and research choices.
 
@@ -61,6 +64,8 @@ The [mission history index](docs/MISSIONS.md) is chronological. [Decision record
 
 - Upstream describes NR-U/Wi-Fi coexistence as experimental; this simulator model is not proof of standards conformance or real-world deployment performance.
 - The baseline is one short run with 62 packets per technology; tail quantiles at this size are unstable and are not generalizable.
+- The Mission 3 pilot uses a 4.9 s simulator horizon because this build asserts on a negative NR UE variable-TTI scheduling delay at 5.018928564 s in a longer run. It has not been shown to reach steady state, and the selected highest load reached only about 20% measured occupancy, not demonstrated saturation.
+- Mission 3's P99.9 values are exploratory; the reporting gate is 10,000 pooled received samples, which still gives only about 16 observations in the top 0.1%. The 12 Mbps NR run means were numerically identical across three seeds for an unverified reason.
 - A packet absent at simulation stop may be dropped or still in flight; the current trace cannot distinguish these cases.
 - Per-packet percentiles are received-packet conditional; lost packets can mask tail behavior, so also report loss and deadline violation ratio.
 - The baseline is downlink UDP only; fairness, offered-load sweeps, repeated-trial inference, and deadline-driven scheduling studies remain future work.

@@ -1,0 +1,5 @@
+phase,mode,rate,seed,exit_code,run_directory
+calibration,mixed,14Mbps,95,-6,results/mission3/calibration/mixed/rate-14Mbps_seed-95
+calibration,mixed,16Mbps,94,-6,results/mission3/calibration/mixed/rate-16Mbps_seed-94
+calibration,mixed,20Mbps,92,-6,results/mission3/calibration/mixed/rate-20Mbps_seed-92
+pilot,mixed,2Mbps,11,-6,results/mission3/pilot/mixed/rate-2Mbps_seed-11

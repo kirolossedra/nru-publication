@@ -1,7 +1,7 @@
 # Documentation audit
 
 **Audit date:** 2026-11-09  
-**Scope:** Root README, governance, architecture/methodology, Missions 1/2/2.5, decision records, and template. This is a documentation/evidence audit only; no new simulation or simulator rebuild was run.
+**Scope:** Root README, governance, architecture/methodology, Missions 1/2/2.5, decision records, and template in the original Mission 2.5 audit; Mission 3 verification is appended chronologically below.
 
 ## Checks performed
 
@@ -71,3 +71,42 @@ The documentation index and governance are in place; the checked paths, numerica
 - Scanned staged text for common GitHub/AWS credential forms/private-key markers; none were found. This is a pattern scan, not proof that no secret of any form exists.
 - Both source patches passed `git apply --check` against files extracted from the exact pinned ns-3 and NR-U commits. `scripts/install-environment.sh` passed `bash -n` and refuses to reuse an existing `source/` directory.
 - Publication commit and push details are provided in the completion report; no force push or branch change is authorized or used.
+
+## Mission 3 experiment and documentation audit (2026-11-09)
+
+### Evidence and implementation checks
+
+- Reviewed `scripts/run_mission3.py`, `scripts/analyze_mission3.py`, the Mission 3 source diff, fixed pilot JSON, all run configs, validation sidecars, and generated metric tables.
+- Incremental build completion is recorded in `logs/build-mission3-traffic-stop.log`. The optional `trafficStopTime` defaults to the existing simulation stop; an execution with default timing matched the saved Mission 1 SQLite E2E throughput, byte counts, mean delay, and jitter. No PHY/MAC protocol logic was changed.
+- The analyzer discovered 39 unique run directories: 35 completed and 4 failed. All 24 primary revised mixed/reference executions completed. The four failures are indexed in [`failed-runs.csv`](../results/mission3/analysis/failed-runs.csv), with configs and full logs retained locally.
+- The 18 common-horizon mixed pilot runs and 6 single-technology references contain 49,838 TX rows and 49,838 unique RX rows. Their sidecars report zero duplicates, unmatched receptions, and packets not received by stop. The validator checks TX-key uniqueness, timestamps/status, sidecar totals, and expected SQLite table names.
+- Seed/configuration claims were checked against `configs/mission3-pilot.json` and per-run `run-config.json`; numerical claims and plotted inputs were checked against `condition-summary.csv` and `seed-run-metrics.csv`. Application payload throughput is derived from packet counts and 1000-byte packet size; FlowMonitor IP throughput is reported separately. Occupancy uses the example's existing SQLite statistic.
+- Both Python scripts passed syntax compilation. The analyzer generated the metric tables and five figures; figures were visually inspected. Matplotlib gave a nonfatal optional Axes3D import warning; required 2D plots completed.
+- The mission report labels P99.9 exploratory, distinguishes across-run Student-t intervals from packet quantiles, notes the identical 12 Mbps NR seed means as an unresolved observation, and avoids claims of congestion, saturation, causality, novelty, or real-world validation.
+- After all experiments, `df -h .` showed 17 GiB available; `du -sh source/ns-3-dev` reported 3.2 GiB and all `results/mission3` artifacts 9.7 MiB. The host remains above the 10 GiB free-space requirement.
+
+### Documentation and reproducibility checks
+
+- Root README, mission index, Mission 3 report, experimental methodology, and D-006 were updated. The report includes the fixed parameter table and links the existing topology and experiment-workflow diagrams.
+- Reproduction commands use the existing compiled binary, exact rates, seeds, and timing. The runner refuses to overwrite existing run folders. Each local execution has its own config, log, packet CSV/sidecar, and SQLite database.
+- Raw per-run folders are gitignored; aggregate/seed/failure CSVs and five PNGs are available as compact outputs. No upstream simulator source or compiled artifact is intended for publication.
+- Earlier Mission 2.5 text stating Mission 3 had not started is historical and superseded by this addendum and the completed Mission 3 report.
+
+### Claims not independently established
+
+- No Mermaid renderer was used; diagram fences and syntax were reviewed manually. Figures were visually inspected, but no independent plotting test framework exists.
+- The simulator cannot identify why a packet absent at stop is missing; primary runs observed none. Existing outputs do not attribute delay to LBT defer/backoff, retransmissions, or PHY/MAC drops. No such causal claim is made.
+- The 4.9 s horizon avoids the observed longer-run assertion but does not establish scheduler correctness or steady-state operation. The identical NR high-load means have an unknown explanation. 12 Mbps did not establish saturation.
+- The 10,000-sample P99.9 threshold leaves only about 16 observations in the top 0.1%; P99.9 is an exploratory empirical value, not a conclusive tail estimate.
+
+### Publication audit (pre-commit; 2026-11-09)
+
+- `gh auth status` confirmed active authenticated account `kirolossedra`; `git fetch origin main` succeeded. Local `main` and `origin/main` both pointed at Mission 1/2/2.5 commit `08a1586ca0cb4f45b136afe7299fb7374d26932d`, so the Mission 3 commit can be a normal fast-forward.
+- Exactly 21 intended files were staged: `.gitignore`, README, Mission 3 config/report/decision, mission index, methodology, audit, incremental source patch, build log, runner/analyzer, three aggregate CSVs, and five figures. Total staged content was about 632 KB; the largest file was `mixed-vs-single-technology.png` at 147,269 bytes.
+- Staged-path audit found no `source/`, build tree, object/library/executable path, or other simulator third-party source. All raw Mission 3 run directories are excluded by `.gitignore`; a representative packet CSV and SQLite path were confirmed ignored. Only compact validated aggregate outputs are staged.
+- A pattern scan of staged text found no GitHub token, AWS access-key, or private-key marker. This scan is limited to those patterns and is not proof that no possible secret exists.
+- Relative Markdown link check found 0 broken paths across 26 Markdown files. Seven Mermaid fences are present (the five required project diagrams plus Mission 3's topology/workflow diagrams); syntax was inspected manually, not renderer-validated.
+- `git diff --check` passed. Repository URL: `https://github.com/kirolossedra/nru-publication`.
+- The Mission 3 patch was reconstructed as an incremental diff from the exact pinned NR-U commit plus the Mission 2 latency patch; `git apply --unidiff-zero --check` and application in a temporary reconstruction confirmed it yields the installed Mission 3 source exactly. Its zero-context form is deliberate and the required apply option is documented in the Mission 3 report.
+
+Commit SHA, push confirmation, remote tree verification, and final worktree status are appended after publication.

@@ -9,5 +9,6 @@ Decision records capture implementation choices. They are not substitutes for th
 - [D-003 — Application-boundary per-packet timestamps](D-003-latency-boundary.md)
 - [D-004 — CSV raw latency alongside SQLite](D-004-csv-and-sqlite.md)
 - [D-005 — End-of-run nonreceipt treatment](D-005-nonreceipt-accounting.md)
+- [D-006 — Mission 3 load calibration and drain interval](D-006-mission3-load-and-drain.md)
 
 New significant architecture, simulator, measurement, and statistical decisions require a new dated record and a link from the associated mission report.
