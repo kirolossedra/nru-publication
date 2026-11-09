@@ -9,3 +9,7 @@ Chronological record of completed project missions. A mission's implementation w
 4. [Mission 3 — Controlled latency-under-load pilot](missions/mission-3-latency-under-load-pilot.md) (complete; preliminary pilot)
 
 Mission 3 completed the first controlled pilot and matched single-RAT references. This is preliminary simulator evidence, not a full campaign. Future work must comply with root [`AGENTS.md`](../AGENTS.md) and use [`MISSION-TEMPLATE.md`](../templates/MISSION-TEMPLATE.md).
+
+5. [Mission 4 — O-RAN project migration and legacy environment retirement](missions/mission-4-oran-migration.md)
+
+NR-U work is now paused. Active research planning is maintained in the separate [O-RAN repository](https://github.com/kirolossedra/oran-publication); this migration preserves the historical archive and does not install the new simulator stack.

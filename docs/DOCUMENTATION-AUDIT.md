@@ -62,6 +62,22 @@ The documentation index and governance are in place; the checked paths, numerica
 - The Mission 2 instrumented SQLite database and Mission 1/2 comparison output are now preserved as `results/mission2-instrumented.db` and `results/mission2-sqlite-comparison.txt`; the recorded E2E query diff is empty.
 - Final local-link scan: 0 broken relative file links across 24 project Markdown files. Five Mermaid blocks were found in the required locations. Mermaid was not rendered by a parser.
 
+## O-RAN transition and local retirement audit (2026-11-09)
+
+- Verified the old archive remote `main` at `997641ad294fab5040b5b5c556a40ecd6ba91879` before editing; its Git tree contained the Missions 1–3 reports, manifests, patches, scripts, logs, and selected validated outputs. No unpublished prior edits existed.
+- Authenticated `gh` as `kirolossedra`; confirmed the requested `oran-publication` repository did not exist, then created it public and pushed the separate O-RAN documentation repository. Initial remote commit: `4952d832af2d233a6c1ad5adef3e96a59256ef73`.
+- Reviewed staged O-RAN files: 26 small text/documentation files, 466 insertions; no file exceeded 10 MB, no simulator/source/build path was staged, `git diff --cached --check` was clean, JSON parsed, and all relative Markdown links resolved. Mermaid fenced blocks were checked for structure but were not rendered by a parser.
+- Updated archived README to mark NR-U paused and link the new repository; added migration report/index entry and parent `.gitignore` rule for the nested independent repository.
+- Verified and removed only `/home/kiro/other-files/self-research/source/ns-3-dev` after checking its canonical path and non-symlink directory type. It measured 3.2 GB; filesystem available space increased from 17 GiB to 20 GiB. Local Mission 3 raw evidence remains 9.8 MB. Other-project simulator trees and shared host packages were not altered.
+- O-RAN compatibility pins and host dependency gaps are documented in its `docs/COMPATIBILITY.md`; no modern source was downloaded and no build or simulation was run.
+- Final Git commit hashes, remote synchronization, clean worktrees, exact file list, and final link checks are recorded in the Mission 4 completion record and completion response.
+
+### Remaining unverified
+
+- No local O-RAN stack compile or scenario execution exists; compatibility is upstream-documented, not locally build-verified.
+- The upstream docs' support for mobility does not establish mobility in the selected ib-ORAN scenario.
+- External URLs were recorded from official project sources; reachability is not continuously validated by this local link check.
+
 ## GitHub publication preparation (2026-11-09)
 
 - Verified `gh auth status` for the active `kirolossedra` account; repository `kirolossedra/nru-publication` is public and defaults to `main`.

@@ -1,5 +1,6 @@
 # Upstream simulator source trees and all nested Git metadata/build outputs
 /source/
+/oran-publication/
 /build/
 **/build/
 

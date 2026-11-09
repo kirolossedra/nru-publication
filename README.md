@@ -1,8 +1,10 @@
 # Latency Under Load in Wi-Fi 6 and 5G NR-U Coexistence
 
-A reproducible ns-3 research environment for studying latency and other network outcomes when Wi-Fi 6 and 5G NR-U share unlicensed spectrum under different channel-access mechanisms.
+A historical, reproducible ns-3 research environment for studying latency and other network outcomes when Wi-Fi 6 and 5G NR-U share unlicensed spectrum under different channel-access mechanisms.
 
-> Current status: Missions 1, 2, 2.5, and 3 are implemented, documented, and published to `main`. The Mission 3 controlled pilot completed 24 mixed/reference runs across 0.5, 2, and 12 Mbps per technology, with per-packet measurements and validated aggregate outputs. These are preliminary simulator observations; no full campaign has started and no result is a publication-level finding.
+> **Archive status:** NR-U work is paused. This repository preserves the completed Missions 1–3, their source patches, documentation, and historical results. Active research has moved to the separate [O-RAN publication repository](https://github.com/kirolossedra/oran-publication). No history or technical records have been removed. The historical stack documented below is not used by the O-RAN project.
+
+The Mission 3 pilot results remain preliminary simulator observations; they are not a publication-level finding.
 
 ## Motivation and central question
 
@@ -84,3 +86,7 @@ The [mission history index](docs/MISSIONS.md) is chronological. [Decision record
 For a full experimental design, see [experimental methodology](docs/methodology/experimental-methodology.md) and [measurement validity risks](docs/methodology/measurement-validity.md). For project-specific architecture decisions, see the [decision record index](docs/decisions/README.md).
 
 For a fresh workspace, [`scripts/install-environment.sh`](scripts/install-environment.sh) checks out the exact pinned sources, applies the compatibility and latency patches, then configures and builds without installing system packages or replacing an existing `source/` tree. See Mission 1 for host prerequisites.
+
+## Project transition
+
+This archive remains available at [kirolossedra/nru-publication](https://github.com/kirolossedra/nru-publication). Active work on 5G RAN performance and resource allocation is maintained separately at [kirolossedra/oran-publication](https://github.com/kirolossedra/oran-publication). The O-RAN project selects ns-3.48, 5G-LENA v5.1, ns3-ai, and Orange ib-ORAN; see its compatibility document for evidence and installation status. The legacy ns-3.35/NR v1.2/NR-U source tree is not carried into that environment.
