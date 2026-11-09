@@ -1,0 +1,571 @@
+/home/kiro/other-files/self-research/source/ns-3-dev/bindings/python/wscript:321: SyntaxWarning: invalid escape sequence '\d'
+  m = re.match( "^castxml version (\d\.\d)(-)?(\w+)?", castxml_version_line)
+Waf: Entering directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+[ 588/3196] Compiling install-ns3-header: ns3/bit-serializer.h
+[ 593/3196] Compiling install-ns3-header: ns3/bit-deserializer.h
+[1165/3196] Compiling src/network/helper/simple-net-device-helper.cc
+[1169/3196] Compiling src/network/helper/packet-socket-helper.cc
+[1202/3196] Compiling src/network/helper/net-device-container.cc
+[1203/3196] Compiling src/network/utils/packet-data-calculators.cc
+[1247/3196] Compiling src/network/utils/sll-header.cc
+[1248/3196] Compiling src/network/utils/net-device-queue-interface.cc
+[1249/3196] Compiling src/network/utils/packet-socket-server.cc
+[1250/3196] Compiling src/network/utils/bit-serializer.cc
+[1251/3196] Compiling src/network/model/packet-metadata.cc
+[1252/3196] Compiling src/network/model/packet.cc
+[1253/3196] Compiling src/network/model/net-device.cc
+[1254/3196] Compiling src/network/model/node-list.cc
+[1255/3196] Compiling src/network/model/node.cc
+[1256/3196] Compiling src/network/model/nix-vector.cc
+[1257/3196] Compiling src/network/model/chunk.cc
+[1258/3196] Compiling src/network/model/header.cc
+[1259/3196] Compiling src/network/model/channel-list.cc
+[1260/3196] Compiling src/network/model/channel.cc
+[1261/3196] Compiling src/network/model/byte-tag-list.cc
+[1262/3196] Compiling src/network/model/buffer.cc
+[1263/3196] Compiling src/network/model/address.cc
+[1264/3196] Compiling src/network/model/application.cc
+[1265/3196] Compiling src/network/model/packet-tag-list.cc
+[1266/3196] Compiling src/network/utils/simple-net-device.cc
+[1267/3196] Compiling src/network/model/socket.cc
+[1268/3196] Compiling src/network/model/socket-factory.cc
+[1269/3196] Compiling src/network/helper/node-container.cc
+[1270/3196] Compiling src/network/utils/packet-probe.cc
+[1271/3196] Compiling src/network/model/tag.cc
+[1272/3196] Compiling src/network/model/tag-buffer.cc
+[1273/3196] Compiling src/network/utils/mac8-address.cc
+[1274/3196] Compiling src/network/model/trailer.cc
+[1275/3196] Compiling src/network/utils/bit-deserializer.cc
+[1276/3196] Compiling src/mobility/helper/group-mobility-helper.cc
+[1277/3196] Compiling src/mobility/helper/mobility-helper.cc
+[1278/3196] Compiling src/mobility/model/rectangle.cc
+[1279/3196] Compiling src/mobility/model/gauss-markov-mobility-model.cc
+[1280/3196] Compiling src/mobility/model/box.cc
+[1281/3196] Linking build/lib/libns3.35-network-debug.so
+[1282/3196] Compiling src/mobility/model/constant-velocity-mobility-model.cc
+[1283/3196] Compiling src/mobility/model/constant-position-mobility-model.cc
+[1284/3196] Compiling src/mobility/model/constant-acceleration-mobility-model.cc
+[1285/3196] Compiling src/mobility/model/mobility-model.cc
+[1286/3196] Compiling src/mobility/helper/ns2-mobility-helper.cc
+[1287/3196] Compiling src/mobility/model/waypoint-mobility-model.cc
+[1288/3196] Compiling src/mobility/model/steady-state-random-waypoint-mobility-model.cc
+[1289/3196] Compiling src/mobility/model/waypoint.cc
+[1290/3196] Compiling src/mobility/model/constant-velocity-helper.cc
+[1291/3196] Compiling src/mobility/model/random-direction-2d-mobility-model.cc
+[1292/3196] Compiling src/mobility/model/geographic-positions.cc
+[1293/3196] Compiling src/mobility/model/random-walk-2d-mobility-model.cc
+[1294/3196] Compiling src/mobility/model/random-waypoint-mobility-model.cc
+[1295/3196] Compiling src/mobility/model/hierarchical-mobility-model.cc
+[1296/3196] Compiling src/mobility/model/position-allocator.cc
+[1297/3196] Compiling src/traffic-control/model/fq-cobalt-queue-disc.cc
+[1298/3196] Compiling src/traffic-control/model/mq-queue-disc.cc
+[1299/3196] Compiling src/traffic-control/model/fq-codel-queue-disc.cc
+[1300/3196] Compiling src/traffic-control/model/fq-pie-queue-disc.cc
+[1301/3196] Compiling src/traffic-control/model/red-queue-disc.cc
+[1302/3196] Linking build/lib/libns3.35-mobility-debug.so
+[1303/3196] Compiling src/traffic-control/model/cobalt-queue-disc.cc
+[1304/3196] Compiling src/traffic-control/model/tbf-queue-disc.cc
+[1305/3196] Compiling src/traffic-control/model/pie-queue-disc.cc
+[1306/3196] Compiling src/traffic-control/model/packet-filter.cc
+[1307/3196] Compiling src/traffic-control/model/prio-queue-disc.cc
+[1308/3196] Compiling src/traffic-control/helper/traffic-control-helper.cc
+[1309/3196] Compiling src/traffic-control/model/pfifo-fast-queue-disc.cc
+[1310/3196] Compiling src/traffic-control/helper/queue-disc-container.cc
+[1311/3196] Compiling src/traffic-control/model/codel-queue-disc.cc
+[1312/3196] Compiling src/traffic-control/model/fifo-queue-disc.cc
+[1313/3196] Compiling src/traffic-control/model/traffic-control-layer.cc
+[1314/3196] Compiling src/traffic-control/model/queue-disc.cc
+[1315/3196] Compiling src/bridge/model/bridge-channel.cc
+[1316/3196] Compiling src/bridge/model/bridge-net-device.cc
+[1317/3196] Compiling src/bridge/helper/bridge-helper.cc
+[1318/3196] Compiling src/propagation/model/itu-r-1411-los-propagation-loss-model.cc
+[1319/3196] Compiling src/propagation/model/propagation-delay-model.cc
+[1320/3196] Compiling src/propagation/model/cost231-propagation-loss-model.cc
+[1321/3196] Compiling src/propagation/model/channel-condition-model.cc
+[1322/3196] Compiling src/propagation/model/itu-r-1411-nlos-over-rooftop-propagation-loss-model.cc
+[1323/3196] Linking build/lib/libns3.35-bridge-debug.so
+[1324/3196] Linking build/lib/libns3.35-traffic-control-debug.so
+[1325/3196] Compiling src/propagation/model/kun-2600-mhz-propagation-loss-model.cc
+[1326/3196] Compiling src/propagation/model/probabilistic-v2v-channel-condition-model.cc
+[1327/3196] Compiling src/propagation/model/three-gpp-propagation-loss-model.cc
+[1328/3196] Compiling src/propagation/model/propagation-loss-model.cc
+[1329/3196] Compiling src/propagation/model/jakes-process.cc
+[1330/3196] Compiling src/propagation/model/jakes-propagation-loss-model.cc
+[1331/3196] Compiling src/propagation/model/three-gpp-v2v-propagation-loss-model.cc
+[1332/3196] Compiling src/propagation/model/okumura-hata-propagation-loss-model.cc
+[1333/3196] Compiling src/antenna/model/phased-array-model.cc
+[1334/3196] Compiling src/antenna/model/three-gpp-antenna-model.cc
+[1335/3196] Compiling src/antenna/model/cosine-antenna-model.cc
+[1336/3196] Compiling src/antenna/model/isotropic-antenna-model.cc
+[1337/3196] Compiling src/antenna/model/angles.cc
+[1338/3196] Linking build/lib/libns3.35-propagation-debug.so
+[1339/3196] Compiling src/antenna/model/parabolic-antenna-model.cc
+[1340/3196] Compiling src/antenna/model/antenna-model.cc
+[1341/3196] Compiling src/antenna/model/uniform-planar-array.cc
+[1342/3196] Compiling src/internet/helper/ripng-helper.cc
+[1343/3196] Compiling src/internet/model/ripng.cc
+[1344/3196] Compiling src/internet/model/ip-l4-protocol.cc
+[1345/3196] Compiling src/internet/model/icmpv6-header.cc
+[1346/3196] Compiling src/internet/helper/ipv4-routing-helper.cc
+[1347/3196] Linking build/lib/libns3.35-antenna-debug.so
+[1348/3196] Compiling src/internet/model/tcp-vegas.cc
+[1349/3196] Compiling src/internet/helper/internet-stack-helper.cc
+[1350/3196] Compiling src/internet/model/ipv6-option.cc
+[1351/3196] Compiling src/internet/model/ipv6-raw-socket-factory-impl.cc
+[1352/3196] Compiling src/internet/helper/rip-helper.cc
+[1353/3196] Compiling src/internet/model/ipv6-autoconfigured-prefix.cc
+[1354/3196] Compiling src/internet/model/tcp-highspeed.cc
+[1355/3196] Compiling src/internet/model/ipv4-packet-probe.cc
+[1356/3196] Compiling src/internet/model/tcp-socket-base.cc
+[1357/3196] Compiling src/internet/model/ipv6-end-point.cc
+[1358/3196] Compiling src/internet/model/ipv6-option-demux.cc
+[1359/3196] Compiling src/internet/model/tcp-linux-reno.cc
+[1360/3196] Compiling src/internet/model/tcp-bic.cc
+[1361/3196] Compiling src/internet/model/tcp-scalable.cc
+[1362/3196] Compiling src/internet/model/rip.cc
+[1363/3196] Compiling src/internet/model/tcp-yeah.cc
+[1364/3196] Compiling src/internet/model/ipv6-pmtu-cache.cc
+[1365/3196] Compiling src/internet/helper/ipv6-routing-helper.cc
+[1366/3196] Compiling src/internet/helper/ipv6-address-helper.cc
+[1367/3196] Compiling src/internet/helper/ipv4-interface-container.cc
+[1368/3196] Compiling src/internet/helper/ipv4-global-routing-helper.cc
+[1369/3196] Compiling src/internet/helper/internet-trace-helper.cc
+[1370/3196] Compiling src/internet/model/ipv4-global-routing.cc
+[1371/3196] Compiling src/internet/model/candidate-queue.cc
+[1372/3196] Compiling src/internet/model/global-route-manager-impl.cc
+[1373/3196] Compiling src/internet/model/global-route-manager.cc
+[1374/3196] Compiling src/internet/model/global-router-interface.cc
+[1375/3196] Compiling src/internet/helper/ipv6-static-routing-helper.cc
+[1376/3196] Compiling src/internet/helper/ipv4-static-routing-helper.cc
+[1377/3196] Compiling src/internet/model/ipv6-static-routing.cc
+[1378/3196] Compiling src/internet/model/ipv6-routing-table-entry.cc
+[1379/3196] Compiling src/internet/model/ipv4-routing-table-entry.cc
+[1380/3196] Compiling src/internet/model/ipv4-static-routing.cc
+[1381/3196] Compiling src/internet/helper/ipv6-list-routing-helper.cc
+[1382/3196] Compiling src/internet/helper/ipv4-list-routing-helper.cc
+[1383/3196] Compiling src/internet/model/ipv6-list-routing.cc
+[1384/3196] Compiling src/internet/model/ipv4-list-routing.cc
+[1385/3196] Compiling src/internet/model/ipv6-routing-protocol.cc
+[1386/3196] Compiling src/internet/model/ipv6-raw-socket-factory.cc
+[1387/3196] Compiling src/internet/model/ipv6-route.cc
+[1388/3196] Compiling src/internet/model/ipv6.cc
+[1389/3196] Compiling src/internet/model/ipv6-interface-address.cc
+[1390/3196] Compiling src/internet/model/ipv6-queue-disc-item.cc
+[1391/3196] Compiling src/internet/model/ipv6-header.cc
+[1392/3196] Compiling src/internet/model/ipv6-packet-filter.cc
+[1393/3196] Compiling src/internet/model/ipv4-raw-socket-factory.cc
+[1394/3196] Compiling src/internet/model/ipv4.cc
+[1395/3196] Compiling src/internet/model/tcp-prr-recovery.cc
+[1396/3196] Compiling src/internet/model/tcp-recovery-ops.cc
+[1397/3196] Compiling src/internet/model/tcp-socket-factory.cc
+[1398/3196] Compiling src/internet/model/udp-socket.cc
+[1399/3196] Compiling src/internet/model/ipv4-queue-disc-item.cc
+[1400/3196] Compiling src/internet/model/tcp-socket.cc
+[1401/3196] Compiling src/internet/model/udp-socket-factory.cc
+[1402/3196] Compiling src/internet/model/ipv4-routing-protocol.cc
+[1403/3196] Compiling src/internet/model/ipv4-header.cc
+[1404/3196] Compiling src/internet/model/ipv4-interface-address.cc
+[1405/3196] Compiling src/internet/model/ipv4-packet-info-tag.cc
+[1406/3196] Compiling src/internet/model/tcp-option-sack.cc
+[1407/3196] Compiling src/internet/model/ipv4-packet-filter.cc
+[1408/3196] Compiling src/internet/model/tcp-option-sack-permitted.cc
+[1409/3196] Compiling src/internet/model/tcp-option-ts.cc
+[1410/3196] Compiling src/internet/model/tcp-option-winscale.cc
+[1411/3196] Compiling src/internet/model/tcp-option-rfc793.cc
+[1412/3196] Compiling src/internet/model/tcp-option.cc
+[1413/3196] Compiling src/internet/model/tcp-rate-ops.cc
+[1414/3196] Compiling src/internet/model/ipv4-address-generator.cc
+[1415/3196] Compiling src/internet/model/tcp-tx-item.cc
+[1416/3196] Compiling src/internet/model/tcp-tx-buffer.cc
+[1417/3196] Compiling src/internet/model/tcp-rx-buffer.cc
+[1418/3196] Compiling src/internet/model/ipv4-route.cc
+[1419/3196] Compiling src/internet/model/ipv6-packet-info-tag.cc
+[1420/3196] Compiling src/internet/model/tcp-bbr.cc
+[1421/3196] Compiling src/internet/model/tcp-lp.cc
+[1422/3196] Compiling src/internet/model/tcp-dctcp.cc
+[1423/3196] Compiling src/internet/model/tcp-htcp.cc
+[1424/3196] Compiling src/internet/model/tcp-ledbat.cc
+[1425/3196] Compiling src/internet/model/tcp-illinois.cc
+[1426/3196] Compiling src/internet/model/tcp-cubic.cc
+[1427/3196] Compiling src/internet/model/tcp-veno.cc
+[1428/3196] Compiling src/internet/model/tcp-westwood.cc
+[1429/3196] Compiling src/internet/model/tcp-congestion-ops.cc
+[1430/3196] Compiling src/internet/model/tcp-socket-state.cc
+[1431/3196] Compiling src/internet/model/icmpv6-l4-protocol.cc
+[1432/3196] Compiling src/internet/model/tcp-hybla.cc
+[1433/3196] Compiling src/internet/model/ipv6-option-header.cc
+[1434/3196] Compiling src/internet/model/ipv6-extension-header.cc
+[1435/3196] Compiling src/internet/model/ipv6-extension-demux.cc
+[1436/3196] Compiling src/internet/model/ipv6-extension.cc
+[1437/3196] Compiling src/internet/model/ipv6-raw-socket-impl.cc
+[1438/3196] Compiling src/internet/model/ipv6-end-point-demux.cc
+[1439/3196] Compiling src/internet/model/ipv6-l3-protocol.cc
+[1440/3196] Compiling src/internet/model/ipv6-interface.cc
+[1441/3196] Compiling src/internet/model/loopback-net-device.cc
+[1442/3196] Compiling src/internet/model/ipv4-raw-socket-factory-impl.cc
+[1443/3196] Compiling src/internet/model/rtt-estimator.cc
+[1444/3196] Compiling src/internet/model/icmpv4.cc
+[1445/3196] Compiling src/internet/model/pending-data.cc
+[1446/3196] Compiling src/internet/model/tcp-socket-factory-impl.cc
+[1447/3196] Compiling src/internet/model/udp-socket-factory-impl.cc
+[1448/3196] Compiling src/internet/model/ipv4-end-point-demux.cc
+[1449/3196] Compiling src/internet/model/udp-socket-impl.cc
+[1450/3196] Compiling src/internet/model/arp-queue-disc-item.cc
+[1451/3196] Compiling src/internet/model/arp-cache.cc
+[1452/3196] Compiling src/internet/model/arp-header.cc
+[1453/3196] Compiling src/internet/model/arp-l3-protocol.cc
+[1454/3196] Compiling src/internet/model/tcp-l4-protocol.cc
+[1455/3196] Compiling src/internet/model/udp-l4-protocol.cc
+[1456/3196] Compiling src/internet/model/ipv4-end-point.cc
+[1457/3196] Compiling src/internet/model/ipv4-l3-protocol.cc
+[1458/3196] Compiling src/internet/model/ipv4-interface.cc
+[1459/3196] Compiling src/internet/model/ripng-header.cc
+[1460/3196] Compiling src/internet/model/icmpv4-l4-protocol.cc
+[1461/3196] Compiling src/internet/model/ndisc-cache.cc
+[1462/3196] Compiling src/internet/model/ipv6-packet-probe.cc
+[1463/3196] Compiling src/internet/model/ipv6-address-generator.cc
+[1464/3196] Compiling src/internet/model/rip-header.cc
+[1465/3196] Compiling src/internet/helper/ipv6-interface-container.cc
+[1466/3196] Compiling src/internet/model/udp-header.cc
+[1467/3196] Compiling src/internet/model/tcp-header.cc
+[1468/3196] Compiling src/internet/helper/ipv4-address-helper.cc
+[1469/3196] Compiling src/internet/model/ipv4-raw-socket-impl.cc
+[1470/3196] Compiling src/spectrum/helper/tv-spectrum-transmitter-helper.cc
+[1471/3196] Compiling src/spectrum/helper/waveform-generator-helper.cc
+[1472/3196] Compiling src/spectrum/model/three-gpp-channel-model.cc
+[1473/3196] Compiling src/spectrum/model/spectrum-analyzer.cc
+[1474/3196] Compiling src/spectrum/model/wifi-spectrum-value-helper.cc
+[1475/3196] Compiling src/spectrum/model/waveform-generator.cc
+[1476/3196] Linking build/lib/libns3.35-internet-debug.so
+[1477/3196] Compiling src/spectrum/model/spectrum-model-ism2400MHz-res1MHz.cc
+[1478/3196] Compiling src/spectrum/model/spectrum-error-model.cc
+[1479/3196] Compiling src/spectrum/helper/spectrum-analyzer-helper.cc
+[1480/3196] Compiling src/spectrum/model/spectrum-phy.cc
+[1481/3196] Compiling src/spectrum/model/spectrum-channel.cc
+[1482/3196] Compiling src/spectrum/model/constant-spectrum-propagation-loss.cc
+[1483/3196] Compiling src/spectrum/model/friis-spectrum-propagation-loss.cc
+[1484/3196] Compiling src/spectrum/model/spectrum-propagation-loss-model.cc
+[1485/3196] Compiling src/spectrum/model/spectrum-signal-parameters.cc
+[1486/3196] Compiling src/spectrum/model/spectrum-value.cc
+[1487/3196] Compiling src/spectrum/model/spectrum-model.cc
+[1488/3196] Compiling src/spectrum/model/three-gpp-spectrum-propagation-loss-model.cc
+[1489/3196] Compiling src/spectrum/model/spectrum-model-300kHz-300GHz-log.cc
+[1490/3196] Compiling src/spectrum/model/aloha-noack-mac-header.cc
+[1491/3196] Compiling src/spectrum/model/single-model-spectrum-channel.cc
+[1492/3196] Compiling src/spectrum/model/spectrum-converter.cc
+[1493/3196] Compiling src/spectrum/model/multi-model-spectrum-channel.cc
+[1494/3196] Compiling src/spectrum/model/spectrum-interference.cc
+[1495/3196] Compiling src/spectrum/helper/adhoc-aloha-noack-ideal-phy-helper.cc
+[1496/3196] Compiling src/spectrum/model/matrix-based-channel-model.cc
+[1497/3196] Compiling src/spectrum/helper/spectrum-helper.cc
+[1498/3196] Compiling src/spectrum/model/trace-fading-loss-model.cc
+[1499/3196] Compiling src/spectrum/model/non-communicating-net-device.cc
+[1500/3196] Compiling src/spectrum/model/aloha-noack-net-device.cc
+[1501/3196] Compiling src/spectrum/model/tv-spectrum-transmitter.cc
+[1502/3196] Compiling src/spectrum/model/half-duplex-ideal-phy-signal-parameters.cc
+[1503/3196] Compiling src/spectrum/model/half-duplex-ideal-phy.cc
+[1504/3196] Compiling src/spectrum/model/microwave-oven-spectrum-value-helper.cc
+[1505/3196] Compiling src/config-store/model/xml-config.cc
+[1506/3196] Compiling src/config-store/model/model-node-creator.cc
+[1507/3196] Compiling src/config-store/model/raw-text-config.cc
+[1508/3196] Compiling src/config-store/model/model-typeid-creator.cc
+[1509/3196] Compiling src/config-store/model/display-functions.cc
+[1510/3196] Compiling src/config-store/model/gtk-config-store.cc
+[1511/3196] Linking build/lib/libns3.35-spectrum-debug.so
+[1512/3196] Compiling src/config-store/model/attribute-default-iterator.cc
+[1513/3196] Compiling src/config-store/model/file-config.cc
+[1514/3196] Compiling src/config-store/model/config-store.cc
+[1515/3196] Compiling src/config-store/model/attribute-iterator.cc
+[1516/3196] Compiling src/energy/helper/li-ion-energy-source-helper.cc
+[1517/3196] Compiling src/energy/helper/energy-model-helper.cc
+[1518/3196] Compiling src/energy/model/device-energy-model.cc
+[1519/3196] Compiling src/energy/model/rv-battery-model.cc
+[1520/3196] Compiling src/energy/model/basic-energy-source.cc
+[1521/3196] Compiling src/energy/model/energy-source.cc
+[1522/3196] Compiling src/energy/helper/basic-energy-source-helper.cc
+[1523/3196] Linking build/lib/libns3.35-config-store-debug.so
+[1524/3196] Compiling src/energy/model/energy-harvester.cc
+[1525/3196] Compiling src/energy/model/basic-energy-harvester.cc
+[1526/3196] Compiling src/energy/helper/energy-harvester-helper.cc
+[1527/3196] Compiling src/energy/helper/energy-source-container.cc
+[1528/3196] Compiling src/energy/model/li-ion-energy-source.cc
+[1529/3196] Compiling src/energy/model/simple-device-energy-model.cc
+[1530/3196] Compiling src/energy/model/device-energy-model-container.cc
+[1531/3196] Compiling src/energy/helper/energy-harvester-container.cc
+[1532/3196] Compiling src/energy/helper/rv-battery-model-helper.cc
+[1533/3196] Compiling src/energy/helper/basic-energy-harvester-helper.cc
+[1534/3196] Compiling src/applications/helper/bulk-send-helper.cc
+[1535/3196] Compiling src/applications/model/three-gpp-http-variables.cc
+[1536/3196] Compiling src/applications/model/udp-echo-client.cc
+[1537/3196] Compiling src/applications/model/three-gpp-http-client.cc
+[1538/3196] Compiling src/applications/model/udp-client.cc
+[1539/3196] Linking build/lib/libns3.35-energy-debug.so
+[1540/3196] Compiling src/applications/model/onoff-application.cc
+[1541/3196] Compiling src/applications/model/bulk-send-application.cc
+[1542/3196] Compiling src/applications/model/packet-sink.cc
+[1543/3196] Compiling src/applications/model/udp-trace-client.cc
+[1544/3196] Compiling src/applications/helper/three-gpp-http-helper.cc
+[1545/3196] Compiling src/applications/helper/packet-sink-helper.cc
+[1546/3196] Compiling src/applications/helper/udp-client-server-helper.cc
+[1547/3196] Compiling src/applications/helper/on-off-helper.cc
+[1548/3196] Compiling src/applications/model/three-gpp-http-header.cc
+[1549/3196] Compiling src/applications/model/application-packet-probe.cc
+[1550/3196] Compiling src/applications/model/three-gpp-http-server.cc
+[1551/3196] Compiling src/applications/helper/udp-echo-helper.cc
+[1552/3196] Compiling src/applications/model/seq-ts-size-header.cc
+[1553/3196] Compiling src/applications/model/udp-server.cc
+[1554/3196] Compiling src/applications/model/udp-echo-server.cc
+[1555/3196] Compiling src/applications/model/packet-loss-counter.cc
+[1556/3196] Compiling src/applications/model/seq-ts-header.cc
+[1557/3196] Compiling src/applications/model/seq-ts-echo-header.cc
+[1558/3196] Compiling src/point-to-point/helper/point-to-point-helper.cc
+[1559/3196] Compiling src/point-to-point/model/ppp-header.cc
+[1560/3196] Compiling src/point-to-point/model/point-to-point-channel.cc
+[1561/3196] Compiling src/point-to-point/model/point-to-point-net-device.cc
+[1562/3196] Compiling src/csma/model/backoff.cc
+[1563/3196] Linking build/lib/libns3.35-applications-debug.so
+[1564/3196] Compiling src/csma/helper/csma-helper.cc
+[1565/3196] Compiling src/csma/model/csma-channel.cc
+[1566/3196] Compiling src/csma/model/csma-net-device.cc
+[1567/3196] Compiling src/fd-net-device/helper/creator-utils.cc
+[1568/3196] Linking build/lib/libns3.35-point-to-point-debug.so
+[1569/3196] Compiling src/fd-net-device/helper/fd-net-device-helper.cc
+[1570/3196] Compiling src/fd-net-device/helper/emu-fd-net-device-helper.cc
+[1571/3196] Compiling src/fd-net-device/helper/tap-fd-net-device-helper.cc
+[1572/3196] Compiling src/fd-net-device/model/fd-net-device.cc
+[1573/3196] Compiling src/fd-net-device/helper/encode-decode.cc
+[1574/3196] Linking build/lib/libns3.35-csma-debug.so
+[1575/3196] Compiling src/buildings/model/three-gpp-v2v-channel-condition-model.cc
+[1576/3196] Compiling src/buildings/model/hybrid-buildings-propagation-loss-model.cc
+[1577/3196] Compiling src/buildings/model/buildings-propagation-loss-model.cc
+[1578/3196] Compiling src/buildings/model/itu-r-1238-propagation-loss-model.cc
+[1579/3196] Compiling src/buildings/model/random-walk-2d-outdoor-mobility-model.cc
+[1580/3196] Linking build/lib/libns3.35-fd-net-device-debug.so
+[1581/3196] Compiling src/buildings/helper/building-container.cc
+[1582/3196] Compiling src/buildings/model/buildings-channel-condition-model.cc
+[1583/3196] Compiling src/buildings/model/building.cc
+[1584/3196] Compiling src/buildings/helper/buildings-helper.cc
+[1585/3196] Compiling src/buildings/model/oh-buildings-propagation-loss-model.cc
+[1586/3196] Compiling src/buildings/model/mobility-building-info.cc
+[1587/3196] Compiling src/buildings/helper/building-allocator.cc
+[1588/3196] Compiling src/buildings/helper/building-position-allocator.cc
+[1589/3196] Compiling src/buildings/model/building-list.cc
+[1590/3196] Compiling src/virtual-net-device/model/virtual-net-device.cc
+[1591/3196] Compiling src/wifi/model/he/mu-snr-tag.cc
+[1592/3196] Compiling src/wifi/model/wifi-tx-vector.cc
+[1593/3196] Compiling src/wifi/model/originator-block-ack-agreement.cc
+[1594/3196] Compiling src/wifi/model/rate-control/aarfcd-wifi-manager.cc
+[1595/3196] Compiling src/wifi/model/rate-control/amrr-wifi-manager.cc
+[1596/3196] Linking build/lib/libns3.35-buildings-debug.so
+[1597/3196] Linking build/lib/libns3.35-virtual-net-device-debug.so
+[1598/3196] Compiling src/wifi/model/rate-control/ideal-wifi-manager.cc
+[1599/3196] Compiling src/wifi/model/rate-control/arf-wifi-manager.cc
+[1600/3196] Compiling src/wifi/model/qos-utils.cc
+[1601/3196] Compiling src/wifi/model/qos-txop.cc
+[1602/3196] Compiling src/wifi/model/ap-wifi-mac.cc
+[1603/3196] Compiling src/wifi/model/wifi-remote-station-info.cc
+[1604/3196] Compiling src/wifi/model/wifi-remote-station-manager.cc
+[1605/3196] Compiling src/wifi/model/wifi-mac.cc
+[1606/3196] Compiling src/wifi/model/mgt-headers.cc
+[1607/3196] Compiling src/wifi/model/channel-access-manager.cc
+[1608/3196] Compiling src/wifi/model/capability-information.cc
+[1609/3196] Compiling src/wifi/model/txop.cc
+[1610/3196] Compiling src/wifi/model/mac-tx-middle.cc
+[1611/3196] Compiling src/wifi/model/supported-rates.cc
+[1612/3196] Compiling src/wifi/model/wifi-mac-queue.cc
+[1613/3196] Compiling src/wifi/model/he/rr-multi-user-scheduler.cc
+[1614/3196] Compiling src/wifi/model/he/he-frame-exchange-manager.cc
+[1615/3196] Compiling src/wifi/model/vht/vht-frame-exchange-manager.cc
+[1616/3196] Compiling src/wifi/model/ht/ht-frame-exchange-manager.cc
+[1617/3196] Compiling src/wifi/model/frame-exchange-manager.cc
+[1618/3196] Compiling src/wifi/model/wifi-default-ack-manager.cc
+[1619/3196] Compiling src/wifi/model/wifi-ack-manager.cc
+[1620/3196] Compiling src/wifi/model/wifi-tx-parameters.cc
+[1621/3196] Compiling src/wifi/model/wifi-acknowledgment.cc
+[1622/3196] Compiling src/wifi/model/wifi-protection-manager.cc
+[1623/3196] Compiling src/wifi/model/wifi-mac-trailer.cc
+[1624/3196] Compiling src/wifi/model/wifi-mac-header.cc
+[1625/3196] Compiling src/wifi/model/wifi-tx-timer.cc
+[1626/3196] Compiling src/wifi/model/wifi-spectrum-phy-interface.cc
+[1627/3196] Compiling src/wifi/model/spectrum-wifi-phy.cc
+[1628/3196] Compiling src/wifi/model/yans-wifi-phy.cc
+[1629/3196] Compiling src/wifi/model/yans-wifi-channel.cc
+[1630/3196] Compiling src/wifi/model/wifi-phy-common.cc
+[1631/3196] Compiling src/wifi/model/interference-helper.cc
+[1632/3196] Compiling src/wifi/model/table-based-error-rate-model.cc
+[1633/3196] Compiling src/wifi/model/nist-error-rate-model.cc
+[1634/3196] Compiling src/wifi/model/error-rate-model.cc
+[1635/3196] Compiling src/wifi/model/yans-error-rate-model.cc
+[1636/3196] Compiling src/wifi/model/wifi-phy-operating-channel.cc
+[1637/3196] Compiling src/wifi/model/ssid.cc
+[1638/3196] Compiling src/wifi/model/wifi-information-element-vector.cc
+[1639/3196] Compiling src/wifi/model/wifi-information-element.cc
+[1640/3196] Compiling src/wifi/model/wifi-utils.cc
+[1641/3196] Compiling src/wifi/model/he/multi-user-scheduler.cc
+[1642/3196] Compiling src/wifi/model/wifi-phy.cc
+[1643/3196] Compiling src/wifi/model/wifi-default-protection-manager.cc
+[1644/3196] Compiling src/wifi/model/wifi-protection.cc
+[1645/3196] Compiling src/wifi/model/ctrl-headers.cc
+[1646/3196] Compiling src/wifi/model/qos-frame-exchange-manager.cc
+[1647/3196] Compiling src/wifi/model/rate-control/onoe-wifi-manager.cc
+[1648/3196] Compiling src/wifi/model/rate-control/aarf-wifi-manager.cc
+[1649/3196] Compiling src/wifi/model/mac-rx-middle.cc
+[1650/3196] Compiling src/wifi/model/sta-wifi-mac.cc
+[1651/3196] Compiling src/wifi/model/status-code.cc
+[1652/3196] Compiling src/wifi/model/regular-wifi-mac.cc
+[1653/3196] Compiling src/wifi/model/block-ack-window.cc
+[1654/3196] Compiling src/wifi/model/snr-tag.cc
+[1655/3196] Compiling src/wifi/model/ampdu-subframe-header.cc
+[1656/3196] Compiling src/wifi/model/msdu-aggregator.cc
+[1657/3196] Compiling src/wifi/model/threshold-preamble-detection-model.cc
+[1658/3196] Compiling src/wifi/model/rate-control/rrpaa-wifi-manager.cc
+[1659/3196] Compiling src/wifi/model/wifi-ppdu.cc
+[1660/3196] Compiling src/wifi/model/he/he-configuration.cc
+[1661/3196] Compiling src/wifi/model/edca-parameter-set.cc
+[1662/3196] Compiling src/wifi/model/simple-frame-capture-model.cc
+[1663/3196] Compiling src/wifi/model/ampdu-tag.cc
+[1664/3196] Compiling src/wifi/model/ht/ht-ppdu.cc
+[1665/3196] Compiling src/wifi/model/ht/ht-phy.cc
+[1666/3196] Compiling src/wifi/model/non-ht/erp-information.cc
+[1667/3196] Compiling src/wifi/helper/athstats-helper.cc
+[1668/3196] Compiling src/wifi/model/phy-entity.cc
+[1669/3196] Compiling src/wifi/model/vht/vht-configuration.cc
+[1670/3196] Compiling src/wifi/model/rate-control/parf-wifi-manager.cc
+[1671/3196] Compiling src/wifi/model/he/constant-obss-pd-algorithm.cc
+[1672/3196] Compiling src/wifi/model/wifi-phy-state-helper.cc
+[1673/3196] Compiling src/wifi/model/adhoc-wifi-mac.cc
+[1674/3196] Compiling src/wifi/model/wifi-mode.cc
+[1675/3196] Compiling src/wifi/model/wifi-net-device.cc
+[1676/3196] Compiling src/wifi/model/block-ack-agreement.cc
+[1677/3196] Compiling src/wifi/model/non-ht/dsss-error-rate-model.cc
+[1678/3196] Compiling src/wifi/model/rate-control/aparf-wifi-manager.cc
+[1679/3196] Compiling src/wifi/model/ht/ht-capabilities.cc
+[1680/3196] Compiling src/wifi/helper/wifi-mac-helper.cc
+[1681/3196] Compiling src/wifi/helper/spectrum-wifi-helper.cc
+[1682/3196] Compiling src/wifi/helper/yans-wifi-helper.cc
+[1683/3196] Compiling src/wifi/helper/wifi-helper.cc
+[1684/3196] Compiling src/wifi/model/he/he-phy.cc
+[1685/3196] Compiling src/wifi/helper/wifi-radio-energy-model-helper.cc
+[1686/3196] Compiling src/wifi/model/vht/vht-phy.cc
+[1687/3196] Compiling src/wifi/model/non-ht/erp-ofdm-phy.cc
+[1688/3196] Compiling src/wifi/model/non-ht/ofdm-phy.cc
+[1689/3196] Compiling src/wifi/model/non-ht/dsss-phy.cc
+[1690/3196] Compiling src/wifi/model/he/he-ru.cc
+[1691/3196] Compiling src/wifi/model/he/obss-pd-algorithm.cc
+[1692/3196] Compiling src/wifi/model/ht/ht-configuration.cc
+[1693/3196] Compiling src/wifi/model/he/he-ppdu.cc
+[1694/3196] Compiling src/wifi/model/vht/vht-ppdu.cc
+[1695/3196] Compiling src/wifi/model/non-ht/ofdm-ppdu.cc
+[1696/3196] Compiling src/wifi/model/non-ht/dsss-ppdu.cc
+[1697/3196] Compiling src/wifi/model/non-ht/erp-ofdm-ppdu.cc
+[1698/3196] Compiling src/wifi/model/wifi-psdu.cc
+[1699/3196] Compiling src/wifi/model/wifi-mac-queue-item.cc
+[1700/3196] Compiling src/wifi/model/he/he-operation.cc
+[1701/3196] Compiling src/wifi/model/extended-capabilities.cc
+[1702/3196] Compiling src/wifi/model/preamble-detection-model.cc
+[1703/3196] Compiling src/wifi/model/frame-capture-model.cc
+[1704/3196] Compiling src/wifi/model/he/he-capabilities.cc
+[1705/3196] Compiling src/wifi/model/he/mu-edca-parameter-set.cc
+[1706/3196] Compiling src/wifi/model/non-ht/dsss-parameter-set.cc
+[1707/3196] Compiling src/wifi/model/vht/vht-operation.cc
+[1708/3196] Compiling src/wifi/model/vht/vht-capabilities.cc
+[1709/3196] Compiling src/wifi/model/ht/ht-operation.cc
+[1710/3196] Compiling src/wifi/model/wifi-tx-current-model.cc
+[1711/3196] Compiling src/wifi/model/mpdu-aggregator.cc
+[1712/3196] Compiling src/wifi/model/wifi-radio-energy-model.cc
+[1713/3196] Compiling src/wifi/model/rate-control/thompson-sampling-wifi-manager.cc
+[1714/3196] Compiling src/wifi/model/wifi-spectrum-signal-parameters.cc
+[1715/3196] Compiling src/wifi/model/block-ack-type.cc
+In file included from ../src/wifi/model/block-ack-type.cc:21:
+../src/wifi/model/block-ack-type.h:48:15: error: ‘uint8_t’ was not declared in this scope
+   48 |   std::vector<uint8_t> m_bitmapLen; //!< Length (bytes) of included bitmaps
+      |               ^~~~~~~
+../src/wifi/model/block-ack-type.h:26:1: note: ‘uint8_t’ is defined in header ‘<cstdint>’; did you forget to ‘#include <cstdint>’?
+   25 | #include <vector>
+  +++ |+#include <cstdint>
+   26 | 
+../src/wifi/model/block-ack-type.h:48:22: error: template argument 1 is invalid
+   48 |   std::vector<uint8_t> m_bitmapLen; //!< Length (bytes) of included bitmaps
+      |                      ^
+../src/wifi/model/block-ack-type.h:48:22: error: template argument 2 is invalid
+../src/wifi/model/block-ack-type.h:67:40: error: ‘uint8_t’ was not declared in this scope
+   67 |   BlockAckType (Variant v, std::vector<uint8_t> l);
+      |                                        ^~~~~~~
+../src/wifi/model/block-ack-type.h:67:40: note: ‘uint8_t’ is defined in header ‘<cstdint>’; did you forget to ‘#include <cstdint>’?
+../src/wifi/model/block-ack-type.h:67:47: error: template argument 1 is invalid
+   67 |   BlockAckType (Variant v, std::vector<uint8_t> l);
+      |                                               ^
+../src/wifi/model/block-ack-type.h:67:47: error: template argument 2 is invalid
+../src/wifi/model/block-ack-type.h:88:3: error: ‘uint8_t’ does not name a type
+   88 |   uint8_t m_nSeqControls;           //!< Number of included Starting Sequence Control fields.
+      |   ^~~~~~~
+../src/wifi/model/block-ack-type.h:88:3: note: ‘uint8_t’ is defined in header ‘<cstdint>’; did you forget to ‘#include <cstdint>’?
+../src/wifi/model/block-ack-type.h:108:31: error: ‘uint8_t’ has not been declared
+  108 |   BlockAckReqType (Variant v, uint8_t nSeqControls);
+      |                               ^~~~~~~
+../src/wifi/model/block-ack-type.cc: In constructor ‘ns3::BlockAckType::BlockAckType(Variant)’:
+../src/wifi/model/block-ack-type.cc:32:19: error: request for member ‘push_back’ in ‘((ns3::BlockAckType*)this)->ns3::BlockAckType::m_bitmapLen’, which is of non-class type ‘int’
+   32 |       m_bitmapLen.push_back (128);
+      |                   ^~~~~~~~~
+../src/wifi/model/block-ack-type.cc:36:19: error: request for member ‘push_back’ in ‘((ns3::BlockAckType*)this)->ns3::BlockAckType::m_bitmapLen’, which is of non-class type ‘int’
+   36 |       m_bitmapLen.push_back (8);
+      |                   ^~~~~~~~~
+../src/wifi/model/block-ack-type.cc: At global scope:
+../src/wifi/model/block-ack-type.cc:52:1: error: no declaration matches ‘ns3::BlockAckType::BlockAckType(Variant, std::vector<unsigned char, std::allocator<unsigned char> >)’
+   52 | BlockAckType::BlockAckType (Variant v, std::vector<uint8_t> l)
+      | ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:33:8: note: candidates are: ‘constexpr ns3::BlockAckType::BlockAckType(ns3::BlockAckType&&)’
+   33 | struct BlockAckType
+      |        ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:33:8: note:                 ‘constexpr ns3::BlockAckType::BlockAckType(const ns3::BlockAckType&)’
+../src/wifi/model/block-ack-type.h:67:3: note:                 ‘ns3::BlockAckType::BlockAckType(Variant, int)’
+   67 |   BlockAckType (Variant v, std::vector<uint8_t> l);
+      |   ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc:26:1: note:                 ‘ns3::BlockAckType::BlockAckType(Variant)’
+   26 | BlockAckType::BlockAckType (Variant v)
+      | ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc:47:1: note:                 ‘ns3::BlockAckType::BlockAckType()’
+   47 | BlockAckType::BlockAckType ()
+      | ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:33:8: note: ‘struct ns3::BlockAckType’ defined here
+   33 | struct BlockAckType
+      |        ^~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc: In constructor ‘ns3::BlockAckReqType::BlockAckReqType(Variant)’:
+../src/wifi/model/block-ack-type.cc:66:7: error: ‘m_nSeqControls’ was not declared in this scope
+   66 |       m_nSeqControls = 1;
+      |       ^~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc: At global scope:
+../src/wifi/model/block-ack-type.cc:81:1: error: no declaration matches ‘ns3::BlockAckReqType::BlockAckReqType(Variant, uint8_t)’
+   81 | BlockAckReqType::BlockAckReqType (Variant v, uint8_t nSeqControls)
+      | ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:74:8: note: candidates are: ‘constexpr ns3::BlockAckReqType::BlockAckReqType(ns3::BlockAckReqType&&)’
+   74 | struct BlockAckReqType
+      |        ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:74:8: note:                 ‘constexpr ns3::BlockAckReqType::BlockAckReqType(const ns3::BlockAckReqType&)’
+../src/wifi/model/block-ack-type.h:108:3: note:                 ‘ns3::BlockAckReqType::BlockAckReqType(Variant, int)’
+  108 |   BlockAckReqType (Variant v, uint8_t nSeqControls);
+      |   ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc:58:1: note:                 ‘ns3::BlockAckReqType::BlockAckReqType(Variant)’
+   58 | BlockAckReqType::BlockAckReqType (Variant v)
+      | ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc:76:1: note:                 ‘ns3::BlockAckReqType::BlockAckReqType()’
+   76 | BlockAckReqType::BlockAckReqType ()
+      | ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.h:74:8: note: ‘struct ns3::BlockAckReqType’ defined here
+   74 | struct BlockAckReqType
+      |        ^~~~~~~~~~~~~~~
+../src/wifi/model/block-ack-type.cc: In function ‘std::ostream& ns3::operator<<(std::ostream&, const BlockAckType&)’:
+../src/wifi/model/block-ack-type.cc:101:56: error: request for member ‘size’ in ‘type.ns3::BlockAckType::m_bitmapLen’, which is of non-class type ‘const int’
+  101 |       os << "multi-tid-block-ack[" << type.m_bitmapLen.size () << "]";
+      |                                                        ^~~~
+../src/wifi/model/block-ack-type.cc:104:56: error: request for member ‘size’ in ‘type.ns3::BlockAckType::m_bitmapLen’, which is of non-class type ‘const int’
+  104 |       os << "multi-sta-block-ack[" << type.m_bitmapLen.size () << "]";
+      |                                                        ^~~~
+../src/wifi/model/block-ack-type.cc: In function ‘std::ostream& ns3::operator<<(std::ostream&, const BlockAckReqType&)’:
+../src/wifi/model/block-ack-type.cc:126:48: error: ‘const struct ns3::BlockAckReqType’ has no member named ‘m_nSeqControls’
+  126 |       os << "multi-tid-block-ack-req[" << type.m_nSeqControls << "]";
+      |                                                ^~~~~~~~~~~~~~
+
+Waf: Leaving directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+Build failed
+ -> task in 'ns3-wifi' failed with exit status 1 (run with -v to display more information)

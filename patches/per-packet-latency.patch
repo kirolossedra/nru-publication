@@ -1,0 +1,195 @@
+diff --git a/examples/cttc-nr-wifi-interference.cc b/examples/cttc-nr-wifi-interference.cc
+index 86b25b2..ab01a34 100644
+--- a/examples/cttc-nr-wifi-interference.cc
++++ b/examples/cttc-nr-wifi-interference.cc
+@@ -27,6 +27,9 @@
+ #include <ns3/flow-monitor-module.h>
+ #include <ns3/multi-model-spectrum-channel.h>
+ #include <ns3/applications-module.h>
++#include <fstream>
++#include <map>
++#include <tuple>
+ 
+ using namespace ns3;
+ 
+@@ -34,6 +37,80 @@ NS_LOG_COMPONENT_DEFINE ("CttcNrWifiInterferenceExample");
+ 
+ static const uint32_t PACKET_SIZE = 1000;
+ 
++struct LatencyPacket
++{
++  std::string technology;
++  std::string flowId;
++  uint32_t sequence;
++  int64_t txNs;
++  int64_t rxNs;
++  uint32_t duplicates;
++  bool received;
++};
++
++static std::map<std::tuple<std::string, std::string, uint32_t>, LatencyPacket> g_latencyPackets;
++static uint64_t g_duplicateReceives = 0;
++static uint64_t g_unmatchedReceives = 0;
++
++static void
++LatencyTx (std::string technology, std::string flowId, Ptr<const Packet>,
++           const Address &, const Address &, const SeqTsSizeHeader &header)
++{
++  auto key = std::make_tuple (technology, flowId, header.GetSeq ());
++  LatencyPacket packet {technology, flowId, header.GetSeq (), header.GetTs ().GetNanoSeconds (),
++                        -1, 0, false};
++  auto inserted = g_latencyPackets.emplace (key, packet);
++  NS_ABORT_MSG_IF (!inserted.second, "Duplicate application TX sequence for " << flowId
++                   << " seq=" << header.GetSeq ());
++}
++
++static void
++LatencyRx (std::string technology, std::string flowId, Ptr<const Packet>,
++           const Address &, const Address &, const SeqTsSizeHeader &header)
++{
++  auto key = std::make_tuple (technology, flowId, header.GetSeq ());
++  auto packet = g_latencyPackets.find (key);
++  if (packet == g_latencyPackets.end ())
++    {
++      ++g_unmatchedReceives;
++      return;
++    }
++  if (packet->second.received)
++    {
++      ++packet->second.duplicates;
++      ++g_duplicateReceives;
++      return;
++    }
++  packet->second.rxNs = Simulator::Now ().GetNanoSeconds ();
++  packet->second.received = true;
++}
++
++static void
++WriteLatencyCsv (const std::string &path)
++{
++  std::ofstream csv (path);
++  NS_ABORT_MSG_IF (!csv.is_open (), "Cannot open latency CSV: " << path);
++  csv << "technology,flow_id,packet_id,tx_timestamp_ns,rx_timestamp_ns,latency_ns,status,duplicate_rx_count\n";
++  for (const auto &entry : g_latencyPackets)
++    {
++      const LatencyPacket &packet = entry.second;
++      csv << packet.technology << ',' << packet.flowId << ',' << packet.sequence << ','
++          << packet.txNs << ',';
++      if (packet.received)
++        {
++          int64_t latencyNs = packet.rxNs - packet.txNs;
++          NS_ABORT_MSG_IF (latencyNs < 0, "Negative end-to-end latency for " << packet.flowId);
++          csv << packet.rxNs << ',' << latencyNs << ",received,";
++        }
++      else
++        {
++          csv << ",,not_received_by_stop,";
++        }
++      csv << packet.duplicates << '\n';
++    }
++  NS_ABORT_MSG_IF (!csv.good (), "Failed writing latency CSV: " << path);
++}
++
+ static void
+ ConfigureDefaultValues (bool cellScan = true, double beamSearchAngleStep = 10.0,
+                         const std::string &errorModel = "ns3::NrEesmErrorModel",
+@@ -189,6 +266,7 @@ main (int argc, char *argv[])
+   std::string gnbCamType = "ns3::NrCat4LbtAccessManager";
+   std::string ueCamType = "ns3::NrAlwaysOnAccessManager"; //this should be kept always on since grant-free UL is not supported yet
+   std::string wifiStandard = "11ax";
++  std::string latencyCsv = "../../results/per-packet-latency.csv";
+ 
+   CommandLine cmd;
+ 
+@@ -224,6 +302,7 @@ main (int argc, char *argv[])
+   cmd.AddValue ("cat2EDThreshold", "The ED threshold to be used by Lbt category 2 algorithm (dBm). Allowed range [-100.0, 0.0]., ", cat2EDThreshold);
+   cmd.AddValue ("cat3and4EDTreshold", "The ED threshold to be used by Lbt category 3 and 4 algorithm (dBm). Allowed range [-100.0, 0.0].", cat3and4EDThreshold);
+   cmd.AddValue ("wifiStandard", "The Wi-Fi standard to use (11ac, 11ax).", wifiStandard);
++  cmd.AddValue ("latencyCsv", "CSV output path for per-packet application latency", latencyCsv);
+ 
+   cmd.Parse (argc, argv);
+ 
+@@ -465,6 +544,7 @@ main (int argc, char *argv[])
+ 
+   uint16_t dlPort = 1234;
+   ApplicationContainer clientApps, serverApps;
++  std::vector<std::pair<std::string, std::string>> serverFlowIds;
+ 
+   PacketSinkHelper dlPacketSinkHelper ("ns3::UdpSocketFactory",
+                                        Address (InetSocketAddress (Ipv4Address::GetAny (), dlPort)));
+@@ -473,17 +553,21 @@ main (int argc, char *argv[])
+   if (enableNr)
+     {
+       serverApps.Add (dlPacketSinkHelper.Install (scenario->GetUes ().Get (nrNodePlace)));
++      serverFlowIds.emplace_back ("nr", "nr-downlink-" + std::to_string (nrNodePlace));
+       if (doubleTechnology)
+         {
+           serverApps.Add (dlPacketSinkHelper.Install (scenario->GetUes ().Get (wifiNodePlace)));
++          serverFlowIds.emplace_back ("wifi", "wifi-downlink-" + std::to_string (wifiNodePlace));
+         }
+     }
+   if (enableWifi)
+     {
+       serverApps.Add (dlPacketSinkHelper.Install (scenario->GetUes ().Get (wifiNodePlace)));
++      serverFlowIds.emplace_back ("wifi", "wifi-downlink-" + std::to_string (wifiNodePlace));
+       if (doubleTechnology)
+         {
+           serverApps.Add (dlPacketSinkHelper.Install (scenario->GetUes ().Get (nrNodePlace)));
++          serverFlowIds.emplace_back ("nr", "nr-downlink-" + std::to_string (nrNodePlace));
+         }
+     }
+ 
+@@ -495,7 +579,14 @@ main (int argc, char *argv[])
+                          Address (InetSocketAddress (ueIpIface.GetAddress (j), dlPort)));
+       onoff.SetConstantRate (DataRate (nodeRate), PACKET_SIZE);
+       onoff.SetAttribute ("EnableSeqTsSizeHeader", BooleanValue (true));
+-      clientApps.Add (onoff.Install (remoteHost));
++      ApplicationContainer flowApps = onoff.Install (remoteHost);
++      clientApps.Add (flowApps);
++      std::string technology = (((ueIpIface.GetAddress (j).Get () >> 24) & 0xff) == 7) ? "nr" : "wifi";
++      std::string flowId = technology + "-downlink-" + std::to_string (j);
++      Ptr<OnOffApplication> source = DynamicCast<OnOffApplication> (flowApps.Get (0));
++      bool txTraceConnected = source->TraceConnectWithoutContext (
++        "TxWithSeqTsSize", MakeBoundCallback (&LatencyTx, technology, flowId));
++      NS_ABORT_MSG_IF (!txTraceConnected, "Unable to connect latency TX trace for " << flowId);
+     }
+ 
+   if (enableNr)
+@@ -519,6 +610,15 @@ main (int argc, char *argv[])
+   serverApps.Stop (Seconds (simTime));
+   clientApps.Stop (Seconds (simTime));
+ 
++  for (uint32_t i = 0; i < serverApps.GetN (); ++i)
++    {
++      Ptr<PacketSink> sink = DynamicCast<PacketSink> (serverApps.Get (i));
++      bool rxTraceConnected = sink->TraceConnectWithoutContext (
++        "RxWithSeqTsSize", MakeBoundCallback (&LatencyRx, serverFlowIds.at (i).first,
++                                               serverFlowIds.at (i).second));
++      NS_ABORT_MSG_IF (!rxTraceConnected, "Unable to connect latency RX trace");
++    }
++
+   PopulateArpCache ();
+ 
+   std::cout << "UE" << std::endl;
+@@ -540,6 +640,21 @@ main (int argc, char *argv[])
+   Simulator::Stop (Seconds (simTime));
+   Simulator::Run ();
+ 
++  WriteLatencyCsv (latencyCsv);
++  std::ofstream validation (latencyCsv + ".validation.txt");
++  NS_ABORT_MSG_IF (!validation.is_open (), "Cannot write latency validation summary");
++  uint64_t receivedPackets = 0;
++  uint64_t notReceivedPackets = 0;
++  for (const auto &entry : g_latencyPackets)
++    {
++      entry.second.received ? ++receivedPackets : ++notReceivedPackets;
++    }
++  validation << "tx_records=" << g_latencyPackets.size () << '\n'
++             << "received_unique=" << receivedPackets << '\n'
++             << "not_received_by_stop=" << notReceivedPackets << '\n'
++             << "duplicate_receives=" << g_duplicateReceives << '\n'
++             << "unmatched_receives=" << g_unmatchedReceives << '\n';
++
+   Ptr<Ipv4FlowClassifier> classifier = DynamicCast<Ipv4FlowClassifier> (flowHelper.GetClassifier ());
+   std::map<FlowId, FlowMonitor::FlowStats> stats = monitor->GetFlowStats ();
+   for (std::map<FlowId, FlowMonitor::FlowStats>::const_iterator i = stats.begin (); i != stats.end (); ++i)

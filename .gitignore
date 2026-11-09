@@ -1,0 +1,76 @@
+# Upstream simulator source trees and all nested Git metadata/build outputs
+/source/
+/build/
+**/build/
+
+# Compiled objects, libraries, executables, and debug artifacts
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.core
+core
+*.gcda
+*.gcno
+*.profraw
+
+# Python/editor/tool caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.cache/
+.codex/
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+*.pem
+*.key
+*credentials*
+*token*
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large generated simulation data; keep only selected validated database/CSV artifacts below
+*.pcap
+*.pcapng
+*.tr
+*.trace
+*.ns3
+*.parquet
+*.npy
+*.npz
+*.h5
+*.mat
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.lock
+*.db
+*.sqlite
+*.sqlite3
+!results/baseline.db
+!results/mission2-instrumented.db
+results/**/*.csv
+!results/per-packet-latency.csv
+!results/latency-analysis/latency-summary.csv

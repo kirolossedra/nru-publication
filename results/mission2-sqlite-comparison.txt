@@ -1,0 +1,12 @@
+Comparison: Mission 1 saved SQLite vs Mission 2 instrumented SQLite
+Columns: technology|throughput_mbps|txbytes|rxbytes|latency_us|jitter_us|seed|run
+
+Mission 1
+nr|0.509888|63736|63736|3377.0|64.0|1|0
+wifi|0.509888|63736|63736|172.0|84.0|1|0
+
+Mission 2
+nr|0.509888|63736|63736|3377.0|64.0|1|0
+wifi|0.509888|63736|63736|172.0|84.0|1|0
+
+Diff (empty means exact equality)

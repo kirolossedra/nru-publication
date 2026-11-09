@@ -1,0 +1,29 @@
+/home/kiro/other-files/self-research/source/ns-3-dev/bindings/python/wscript:321: SyntaxWarning: invalid escape sequence '\d'
+  m = re.match( "^castxml version (\d\.\d)(-)?(\w+)?", castxml_version_line)
+Waf: Entering directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+[3053/3196] Compiling contrib/nr-u/examples/cttc-nr-wifi-interference.cc
+[3155/3196] Linking build/contrib/nr-u/examples/ns3.35-cttc-nr-wifi-interference-debug
+Waf: Leaving directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (4.545s)
+
+Modules built:
+antenna                   aodv                      applications
+bridge                    buildings                 config-store
+core                      csma                      csma-layout
+dsdv                      dsr                       energy
+fd-net-device             flow-monitor              internet
+internet-apps             lr-wpan                   lte
+mesh                      mobility                  netanim
+network                   nix-vector-routing        nr (no Python)
+nr-u (no Python)          olsr                      point-to-point
+point-to-point-layout     propagation               sixlowpan
+spectrum                  stats                     tap-bridge
+test (no Python)          topology-read             traffic-control
+uan                       virtual-net-device        wave
+wifi                      wimax
+
+Modules not built (see ns-3 tutorial for explanation):
+brite                     click                     dpdk-net-device
+mpi                       openflow                  visualizer
+

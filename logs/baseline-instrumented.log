@@ -1,0 +1,117 @@
+/home/kiro/other-files/self-research/source/ns-3-dev/bindings/python/wscript:321: SyntaxWarning: invalid escape sequence '\d'
+  m = re.match( "^castxml version (\d\.\d)(-)?(\w+)?", castxml_version_line)
+Waf: Entering directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+Waf: Leaving directory `/home/kiro/other-files/self-research/source/ns-3-dev/build'
+Build commands will be stored in build/compile_commands.json
+'build' finished successfully (0.522s)
+gnb 0 pos 0:0:1.5
+gnb 1 pos 0:0.5:1.5
+ue 0 pos 5:0:1.5
+ue 1 pos 5:0.5:1.5
+Configuring NR with 1 gNBs, and 1 UEs
+Strategy for UEs attachment: manual mapping. 
+ attaching 0 to 0
+Connecting remote hosts to EPC with a 100 Gb/s link, MTU 2500 B, delay 0 s
+Configuring Wi-Fi with 1 APs, and 1 STAs
+Connecting remote hosts to the APs with a 100 Gb/s link, MTU 2500 B, delay 0 s
+UE
+UE-NR-2 has 2 interfaces, ip addresses:
+interface 0, addr 0, ip: 127.0.0.1 mask: 255.0.0.0
+interface 1, addr 0, ip: 7.0.0.2 mask: 255.0.0.0
+STA-WIFI-primero-3 has 2 interfaces, ip addresses:
+interface 0, addr 0, ip: 127.0.0.1 mask: 255.0.0.0
+interface 1, addr 0, ip: 10.0.0.1 mask: 255.255.255.0
+UE-NR-2 routing table:
+Node: 2, Time: +0s, Local time: +0s, Ipv4ListRouting table
+  Priority: 0 Protocol: ns3::Ipv4StaticRouting
+Node: 2, Time: +0s, Local time: +0s, Ipv4StaticRouting table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      -      -   0
+7.0.0.0         0.0.0.0         255.0.0.0       U     0      -      -   1
+0.0.0.0         7.0.0.1         0.0.0.0         UGS   0      -      -   1
+
+  Priority: -10 Protocol: ns3::Ipv4GlobalRouting
+Node: 2, Time: +0s, Local time: +0s, Ipv4GlobalRouting table
+
+
+STA-WIFI-primero-3 routing table:
+Node: 3, Time: +0s, Local time: +0s, Ipv4ListRouting table
+  Priority: 0 Protocol: ns3::Ipv4StaticRouting
+Node: 3, Time: +0s, Local time: +0s, Ipv4StaticRouting table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      -      -   0
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      -      -   1
+0.0.0.0         0.0.0.0         0.0.0.0         U     0      -      -   1
+
+  Priority: -10 Protocol: ns3::Ipv4GlobalRouting
+Node: 3, Time: +0s, Local time: +0s, Ipv4GlobalRouting table
+
+
+GNB
+GNB-NR-0 has 2 interfaces, ip addresses:
+interface 0, addr 0, ip: 127.0.0.1 mask: 255.0.0.0
+interface 1, addr 0, ip: 10.0.0.5 mask: 255.255.255.252
+AP-WIFI-primero-1 has 3 interfaces, ip addresses:
+interface 0, addr 0, ip: 127.0.0.1 mask: 255.0.0.0
+interface 1, addr 0, ip: 10.0.0.2 mask: 255.255.255.0
+interface 2, addr 0, ip: 2.0.0.1 mask: 255.255.0.0
+GNB-NR-0 routing table:
+Node: 0, Time: +0s, Local time: +0s, Ipv4ListRouting table
+  Priority: 0 Protocol: ns3::Ipv4StaticRouting
+Node: 0, Time: +0s, Local time: +0s, Ipv4StaticRouting table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      -      -   0
+10.0.0.4        0.0.0.0         255.255.255.252 U     0      -      -   1
+
+  Priority: -10 Protocol: ns3::Ipv4GlobalRouting
+Node: 0, Time: +0s, Local time: +0s, Ipv4GlobalRouting table
+
+
+AP-WIFI-primero-1 routing table:
+Node: 1, Time: +0s, Local time: +0s, Ipv4ListRouting table
+  Priority: 0 Protocol: ns3::Ipv4StaticRouting
+Node: 1, Time: +0s, Local time: +0s, Ipv4StaticRouting table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      -      -   0
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      -      -   1
+2.0.0.0         0.0.0.0         255.255.0.0     U     0      -      -   2
+
+  Priority: -10 Protocol: ns3::Ipv4GlobalRouting
+Node: 1, Time: +0s, Local time: +0s, Ipv4GlobalRouting table
+
+
+REMOTE
+ has 3 interfaces, ip addresses:
+interface 0, addr 0, ip: 127.0.0.1 mask: 255.0.0.0
+interface 1, addr 0, ip: 1.0.0.2 mask: 255.255.0.0
+interface 2, addr 0, ip: 2.0.0.2 mask: 255.255.0.0
+ routing table:
+Node: 4, Time: +0s, Local time: +0s, Ipv4ListRouting table
+  Priority: 0 Protocol: ns3::Ipv4StaticRouting
+Node: 4, Time: +0s, Local time: +0s, Ipv4StaticRouting table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+127.0.0.0       0.0.0.0         255.0.0.0       U     0      -      -   0
+1.0.0.0         0.0.0.0         255.255.0.0     U     0      -      -   1
+2.0.0.0         0.0.0.0         255.255.0.0     U     0      -      -   2
+7.0.0.0         0.0.0.0         255.0.0.0       U     0      -      -   1
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      -      -   2
+
+  Priority: -10 Protocol: ns3::Ipv4GlobalRouting
+Node: 4, Time: +0s, Local time: +0s, Ipv4GlobalRouting table
+
+
+Simulation Time: +0.0001s real time: 23h, 48m, 5s.
+Simulation Time: +0.1001s real time: 23h, 48m, 5s.
+Simulation Time: +0.2001s real time: 23h, 48m, 5s.
+Simulation Time: +0.3001s real time: 23h, 48m, 5s.
+Simulation Time: +0.4001s real time: 23h, 48m, 5s.
+Simulation Time: +0.5001s real time: 23h, 48m, 5s.
+Simulation Time: +0.6001s real time: 23h, 48m, 6s.
+Simulation Time: +0.7001s real time: 23h, 48m, 6s.
+Simulation Time: +0.8001s real time: 23h, 48m, 6s.
+Simulation Time: +0.9001s real time: 23h, 48m, 7s.
+Simulation Time: +1.0001s real time: 23h, 48m, 7s.
+Simulation Time: +1.1001s real time: 23h, 48m, 8s.
+Simulation Time: +1.2001s real time: 23h, 48m, 8s.
+Simulation Time: +1.3001s real time: 23h, 48m, 8s.
+Simulation Time: +1.4001s real time: 23h, 48m, 9s.
