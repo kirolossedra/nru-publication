@@ -130,7 +130,7 @@ Unique raw run folders are retained locally under `results/mission3/{calibration
 
 Primary mixed pilot conditions were 10 seeds at 500 kbps, 5 at 2 Mbps, and 3 at 12 Mbps. Each condition's NR and Wi-Fi flow respectively transmitted and uniquely received 2,180, 4,370, and 15,747 packets. All 24 primary mixed and single-RAT reference runs had zero nonreceipt-by-stop, duplicate, or unmatched packets. Nonreceipt is an observation at stop, not a known-drop label.
 
-| Rate per technology | Tech | TX-derived source rate Mbps | RX app payload Mbps | FlowMonitor IP RX Mbps | Occupancy | Mean latency µs (95% across-seed CI) | Median / P95 / P99 µs | P99.9 µs (pooled received n) | Mean abs. successive-delay variation µs | Nonreceipt | Miss ratio >500 / >1000 / >5000 µs |
+| Rate per technology | Tech | TX-derived source rate Mbps | RX app payload Mbps | FlowMonitor IP RX Mbps | Occupancy | Mean latency µs (95% across-seed CI) | Mean per-seed median / P95 / P99 µs | P99.9 µs (pooled received n) | Mean abs. successive-delay variation µs | Nonreceipt | Miss ratio >500 / >1000 / >5000 µs |
 |---:|---|---:|---:|---:|---:|---:|---|---:|---:|---:|---|
 | 0.5 Mbps | NR | 0.4983 | 0.4983 | 0.5122 | 0.03508 | 3339.2 (3329.6–3348.8) | 3314.3 / 3314.3 / 3514.3 | not reported (n=2180) | 30.5 | 0/2180 | 1.000 / 1.000 / 0.00459 |
 | 0.5 Mbps | Wi-Fi | 0.4983 | 0.4983 | 0.5122 | 0.01113 | 174.4 (168.0–180.8) | 134.8 / 351.5 / 387.4 | not reported (n=2180) | 76.6 | 0/2180 | 0.00459 / 0 / 0 |
